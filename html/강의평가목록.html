@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/강의평가.css">
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <!-- header -->
+            <h1>
+                <a href="">
+                    <img src="../img/img_ezenInside2.png" alt="">
+                </a>
+            </h1>
+            <ul class="top-menu">
+                <li><a href="메인.html" id="loginText">로그인</a></li>
+                <li><a href="myinfo.html">내정보</a></li>
+                <li><a href="쪽지.html">쪽지</a></li>
+            </ul>
+            <nav class="nav">
+                <ul>
+                    <li><a href="notice_board.html" class="stress">공지사항</a></li>
+                    <li><a href="free_board.html" class="stress">자유게시판</a></li>
+                    <li><a href="시간표.html" class="stress">시간표</a></li>
+                    <li><a href="강의평가메인.html" class="stress">강의평가</a></li>
+                    <li><a href="학점계산기.html" class="stress">학점계산기</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="inner inner-detail">
+            <div class="search detail-search">
+                <p>일반화학1</p>
+                <a href="강의평가개요.html" class="item">
+                    <img src="../img/info.png" alt="">
+                    <p>개요</p>
+                </a>
+                <a href="" class="item stress">
+                    <img src="../img/rating.png" alt="">
+                    <p>강의평</p>
+                </a>
+                <a href="강의시험목록.html" class="item">
+                    <img src="../img/exam.png" alt="">
+                    <p>시험 정보</p>
+                </a>
+                <a href="강의평가입력.html" class="write" id="reviewWrite">
+                    평가하기
+                </a>
+            </div>
+            <div class="board-list feedback-list">
+                <div class="feedback-header">
+                    <div class="average">
+                        <span class="title">4.02</span>
+                        <span class="star">
+                            <img src="../img/full_star.svg" alt="">
+                            <img src="../img/full_star.svg" alt="">
+                            <img src="../img/full_star.svg" alt="">
+                            <img src="../img/full_star.svg" alt="">
+                            <img src="../img/star_empty.png" alt="">
+                        </span>
+                    </div>
+                    <div class="buttons">
+                        <div class="btn1" name="" id="">
+                            <span class="selected">
+                                <span>
+                                    전체
+                                </span>
+                                <img src="../img/arrow_down.png" alt="">
+                            </span>
+                            <div class="custom-options">
+                                <div class="option" data-value="">
+                                    전체
+                                    <span>
+                                        (35)
+                                    </span>
+                                </div>
+                                <div class="option" data-value="">
+                                    <img src="../img/full_star.svg" alt="">
+                                    <p>5</p>
+                                    <span>
+                                        (7)
+                                    </span>
+                                </div>
+                                <div class="option" data-value="">
+                                    <img src="../img/full_star.svg" alt="">
+                                    <p>4</p>
+                                    <span>
+                                        (15)
+                                    </span>
+                                </div>
+                                <div class="option" data-value="">
+                                    <img src="../img/full_star.svg" alt="">
+                                    <p>3</p>
+                                    <span>
+                                        (10)
+                                    </span>
+                                </div>
+                                <div class="option" data-value="">
+                                    <img src="../img/full_star.svg" alt="">
+                                    <p>2</p>
+                                    <span>
+                                        (2)
+                                    </span>
+                                </div>
+                                <div class="option" data-value="">
+                                    <img src="../img/full_star.svg" alt="">
+                                    <p>1</p>
+                                    <span>
+                                        (1)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn1" name="" id="">
+                            <span class="selected">
+                                <span>
+                                    등록순
+                                </span>
+                                <img src="../img/arrow_down.png" alt="">
+                            </span>
+                            <div class="custom-options">
+                                <div class="option" data-value="">
+                                    등록순
+                                </div>
+                                <div class="option" data-value="">
+                                    추천순
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="feedback-display">
+                    <!-- 여기에 평가 결과가 표시됩니다 -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="inner">
+            <!-- footer -->
+            <div class="top-title bold">
+                <span>이젠 아카데미 학원</span>
+            </div>
+            <div class="middle">
+                <span>인천광역시</span>
+                <span class="before">사업자등록번호: 000-00-00000</span>
+                <span class="before">직업정보제공사업 신고번호: 0*14</span>
+            </div>
+            <div class="bottom">
+                <span><a href="">이용약관</a></span>
+                <span class="before bold"><a href="">개인정보처리방침</a></span>
+                <span class="before"><a href="">청소년보호정책</a></span>
+                <span class="before"><a href="">커뮤니티이용규칙</a></span>
+                <span class="before"><a href="">문의하기</a></span>
+                <span class="before"><a href="">ㅇㅇㅇ</a></span>
+            </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            function setLocalStorage(key, value){ localStorage.setItem(key,JSON.stringify(value)); } 
+            function getLocalStorage(key){ return JSON.parse(localStorage.getItem(key)); }
+
+            let myObj = getLocalStorage('loginInfomation');
+            let myId = myObj.id;
+            let loginOp = 'guest'
+            const loginText = document.getElementById('loginText');
+
+            console.log(loginOp)
+            if(myId == ''){
+                loginOp = 'guest'
+                loginText.innerText = '로그인'
+            }else if(myId.includes('admin')){
+                loginOp = 'master'
+                loginText.innerText = '로그아웃'
+            }else if(myId != ''){
+                loginOp = 'user'
+                loginText.innerText = '로그아웃'
+            }
+
+            // 로그인 로그아웃 관리자 별로 다른 UI 제공
+            document.getElementById('loginText').addEventListener('click',(e)=>{
+                e.preventDefault();
+                if(document.getElementById('loginText').innerText == '로그인'){
+                    location.href = "login.html";
+                }else if(document.getElementById('loginText').innerText == '로그아웃'){
+                    setLocalStorage('loginInfomation',{id : '',password : '', name : '', email : ''})
+                    location.href = "메인.html";
+                }
+            })
+
+            const reviewDisplay = document.getElementById('feedback-display');
+            
+            // localStorage에서 데이터 가져오기
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            const loginInfomation = JSON.parse(localStorage.getItem('loginInfomation')) || {};
+
+            //로그인 유무 확인, 글쓰기 제어
+            document.getElementById('reviewWrite').addEventListener('click',(event)=>{
+                if (!loginInfomation || Object.keys(loginInfomation).length === 0 || loginInfomation.id==''){
+                    alert('로그인이 필요합니다.');
+                    event.preventDefault();
+                }
+            })
+
+
+            // 별점 이미지를 생성하는 함수
+            const getStarRatingHtml = (rating) => {
+                const fullStar = '<img src="../img/full_star.svg" alt="Full Star">';
+                const emptyStar = '<img src="../img/star_empty.png" alt="Empty Star">';
+                let starsHtml = '';
+
+                for (let i = 0; i < 5; i++) {
+                    starsHtml += i < rating ? fullStar : emptyStar;
+                }
+                return starsHtml;
+            };
+
+            // 최신 리뷰가 위로 오도록 배열을 역순으로 정렬하기
+            const sortedReviews = reviews.slice().reverse(); // 원본 배열을 변경하지 않고 역순 배열을 생성
+
+            // 데이터를 화면에 표시하기
+            if (sortedReviews.length === 0) {
+                reviewDisplay.innerHTML = `
+                <div class="review">
+                    <p class="text">작성된 리뷰가 없습니다.</p>
+                </div>
+                `;
+            } else {
+                reviewDisplay.innerHTML = sortedReviews.map((review, index) => `
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="title">
+                                <div class="star-rating">
+                                    ${getStarRatingHtml(review.rating)}
+                                </div>
+                                <span>
+                                    <p>${review.semester}</p>
+                                    <p>
+                                        <span><img src="../img/ddabong.svg"></span>
+                                        <span>1</span>
+                                    </p>
+                                </span>   
+                            </div> 
+                            <div class="btns">
+                                <button class="btn1" type="button">
+                                    <img src="../img/ddabong_gray.png">
+                                    <p>추천</p>
+                                </button>
+                                <button class="btn2" type="button">신고</button>
+                            </div>
+                        </div>
+                        <p class="text">${review.reviewText || '작성된 강의평이 없습니다.'}</p>
+                    </div>
+                    <div class="line-div"></div>
+                `).join('');
+            }
+        });
+    </script>
+</body>
