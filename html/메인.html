@@ -580,69 +580,8 @@
             </div>
     </footer>
     <script>
-        function setLocalStorage(key, value){ localStorage.setItem(key,JSON.stringify(value)); } 
-        function getLocalStorage(key){ return JSON.parse(localStorage.getItem(key)); }
-
-        let myObj = getLocalStorage('loginInfomation');
-        let myId = myObj.id;
-        let loginOp = 'guest'
-
-        if(myId == ''){
-            loginOp = 'guest'
-        }else if(myId.includes('admin')){
-            loginOp = 'master'
-        }else if(myId != ''){
-            loginOp = 'user'
-        }
-
-        // 로그인 로그아웃 관리자 별로 다른 UI 제공
-        const profile = document.getElementById('profile');
-        const loginText = document.getElementById('loginText');
-        if(loginOp == 'user') {
-            // 로그인 후 나타날 화면
-            loginText.innerText = '로그아웃';
-            document.getElementById('profile_id').innerText = myObj.id;
-            document.getElementById('profile_name').innerText = myObj.name;
-
-            document.getElementById('myprofile_logout').addEventListener('click',()=>{
-            setLocalStorage('loginInfomation',{id : '',password : '', name : '', email : ''})
-            location.reload();
-        })
-        }else if(loginOp == 'guest'){
-            // 로그아웃 상태에서 나타날 화면
-            loginText.innerText = '로그인';
-            profile.innerHTML = `<h3 class="false_h3">커뮤니티 이용을 위해<br>로그인이 필요합니다!</h3><a href="login.html" class="false_a">로그인 하러 가기</a>`;
-            document.getElementById('mapBox').innerHTML = '';
-
-        }else if(loginOp == 'master'){
-            // 관리자 권한 로그인 후 나타날 화면
-            loginText.innerText = '로그아웃';     
-            profile.innerHTML = `<h3 class="false_h3">관리자 권한으로<br>로그인했습니다.</h3>`;
-            document.getElementById('mapBox').innerHTML = '';
-        }
-
-        window.addEventListener('DOMContentLoaded', function(){
-            var container = document.getElementById('myMap'); //지도를 담을 영역의 DOM 레퍼런스
-            var options = { //지도를 생성할 때 필요한 기본 옵션
-                center: new kakao.maps.LatLng(37.4492849605083, 126.65445129317933), //지도의 중심좌표.
-                level: 5 //지도의 레벨(확대, 축소 정도)
-            };
-
-            var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-
-        });
-
-        document.getElementById('loginText').addEventListener('click',(e)=>{
-            e.preventDefault();
-            if(document.getElementById('loginText').innerText == '로그인'){
-                location.href = "login.html";
-            }else if(document.getElementById('loginText').innerText == '로그아웃'){
-                setLocalStorage('loginInfomation',{id : '',password : '', name : '', email : ''})
-                location.href = "메인.html";
-            }
-        })
-
-        // 메인 상단 이미지 배너
+        // 메인 상단 이미지 배너 
+        // 메인 배너가 업로드되지 않는 오류 해결 위치만바꿈
         function Slider(target, type) {
             // 상태
             let index = 1;
@@ -741,6 +680,70 @@
         setInterval(() => {
             s1.next();
         }, 4000)
+
+
+        function setLocalStorage(key, value){ localStorage.setItem(key,JSON.stringify(value)); } 
+        function getLocalStorage(key){ return JSON.parse(localStorage.getItem(key)); }
+
+        let myObj = getLocalStorage('loginInfomation');
+        let myId = myObj.id;
+        let loginOp = 'guest'
+
+        if(myId == ''){
+            loginOp = 'guest'
+        }else if(myId.includes('admin')){
+            loginOp = 'master'
+        }else if(myId != ''){
+            loginOp = 'user'
+        }
+
+        // 로그인 로그아웃 관리자 별로 다른 UI 제공
+        const profile = document.getElementById('profile');
+        const loginText = document.getElementById('loginText');
+        if(loginOp == 'user') {
+            // 로그인 후 나타날 화면
+            loginText.innerText = '로그아웃';
+            document.getElementById('profile_id').innerText = myObj.id;
+            document.getElementById('profile_name').innerText = myObj.name;
+
+            document.getElementById('myprofile_logout').addEventListener('click',()=>{
+            setLocalStorage('loginInfomation',{id : '',password : '', name : '', email : ''})
+            location.reload();
+        })
+        }else if(loginOp == 'guest'){
+            // 로그아웃 상태에서 나타날 화면
+            loginText.innerText = '로그인';
+            profile.innerHTML = `<h3 class="false_h3">커뮤니티 이용을 위해<br>로그인이 필요합니다!</h3><a href="login.html" class="false_a">로그인 하러 가기</a>`;
+            document.getElementById('mapBox').innerHTML = '';
+
+        }else if(loginOp == 'master'){
+            // 관리자 권한 로그인 후 나타날 화면
+            loginText.innerText = '로그아웃';     
+            profile.innerHTML = `<h3 class="false_h3">관리자 권한으로<br>로그인했습니다.</h3>`;
+            document.getElementById('mapBox').innerHTML = '';
+        }
+
+        window.addEventListener('DOMContentLoaded', function(){
+            var container = document.getElementById('myMap'); //지도를 담을 영역의 DOM 레퍼런스
+            var options = { //지도를 생성할 때 필요한 기본 옵션
+                center: new kakao.maps.LatLng(37.4492849605083, 126.65445129317933), //지도의 중심좌표.
+                level: 5 //지도의 레벨(확대, 축소 정도)
+            };
+
+            var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+        });
+
+        document.getElementById('loginText').addEventListener('click',(e)=>{
+            e.preventDefault();
+            if(document.getElementById('loginText').innerText == '로그인'){
+                location.href = "login.html";
+            }else if(document.getElementById('loginText').innerText == '로그아웃'){
+                setLocalStorage('loginInfomation',{id : '',password : '', name : '', email : ''})
+                location.href = "메인.html";
+            }
+        })
+
     </script>
 </body>
 
